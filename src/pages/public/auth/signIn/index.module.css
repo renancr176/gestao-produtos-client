@@ -1,0 +1,62 @@
+.loginContainer{
+    height: 100vh;
+}
+
+.formContainer{
+    background-color: #E0E0E0;
+    min-width: 400px;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.link,
+.link:hover{
+    text-decoration: none;
+    color: var(--tc-red);
+}
+
+.leftBar{
+    height: 100vh;
+    width: 70px;
+    background-color: var(--tc-red);
+    filter: brightness(90%);
+    position: relative;
+}
+
+.leftBar .ball{
+    position: fixed;
+    margin-top: 49px;
+    background-color: white;
+    border-radius: 100%;
+    width: 100%;
+    height: 70px;
+}
+
+.leftBar img{
+    position: fixed;
+    margin-left: 4px;
+    margin-top: 52px;
+    max-height: 63px;
+}
+
+
+@media only screen and (max-width: 916px) {
+    .leftBar{
+        overflow: hidden;
+    }
+
+    .title{
+        text-align: center !important;
+        margin-top: 1em;
+    }
+}
+
+@media only screen and (max-width: 413px) {
+    .leftBar{
+        overflow: hidden;
+    }
+
+    .title{
+        text-align: center !important;
+    }
+}

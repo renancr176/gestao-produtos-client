@@ -1,0 +1,105 @@
+.headerTop {
+    width: "100%";
+    background: var(--tcBackground2);
+    color: var(--tcText2);
+}
+
+.headerTop a {
+    color: var(--tcText2);
+}
+
+.headerTop a:hover {
+    color: var(--tcColor2);
+    transition:linear 5s ease-in-out;
+}
+
+.headerTopCointainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.headerTopCointainer>div:last-child a {
+    text-decoration: none;
+    margin-left: 3rem;
+}
+
+.collapseArea {
+    margin: 0 2rem;
+}
+
+.navCenter {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto !important;
+}
+
+.NavHashLink {
+    color: var(--tcText2);
+}
+
+.navCenter>a {
+    margin: 0 1.5rem;
+    color: rgba(0,0,0,.55);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.navCenter>a:hover{
+    color:var(--tc-dark);
+}
+
+.logo {
+    margin-right: 20px;
+    padding: 0;
+}
+
+.logo img {
+    height: 2rem;
+}
+
+.headerMain {
+    padding: 1.5rem 0;
+    font-weight: 600;
+    background-color: var(--tcBackground1);
+}
+
+.linkIcon {
+    color: var(--tcColor1);
+    pointer-events: none;
+}
+
+.linkIcon:hover {
+    color: var(--tcColor2);
+}
+
+.navTopHiddenLinks {
+    display: none !important;
+}
+
+@media (max-width: 992px) {
+    .headerTop {
+        display: none;
+    }
+
+    .headerMain {
+        font-weight: 400;
+    }
+
+    .collapseArea {
+        order: 1;
+    }
+
+    .navCenter>a {
+        margin: 0;
+    }
+
+    .navTopHiddenLinks {
+        display: flex !important;
+    }
+}

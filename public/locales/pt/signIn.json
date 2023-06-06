@@ -1,0 +1,11 @@
+{
+    "title": "Login",
+    "labelEmail": "E-mail",
+    "phEmail": "Informe seu e-mail",
+    "labelPassword": "Senha",
+    "phPassword": "Senha",
+    "signup": "Registrar",
+    "passwordReset": "Esqueci minha senha",
+    "labelBtnSubmit": "Acessar",
+    "pendingCheckout": "Você tem produtos no carrinho. Finalize a compra para receber seu pedido!"
+}

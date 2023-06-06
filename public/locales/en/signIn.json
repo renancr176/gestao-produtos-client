@@ -1,0 +1,11 @@
+{
+    "title": "SignIn",
+    "labelEmail": "Email",
+    "phEmail": "Enter email",
+    "labelPassword": "Password",
+    "phPassword": "Password",
+    "signup": "SignUp",
+    "passwordReset": "Forgot my password",
+    "labelBtnSubmit": "SignIn",
+    "pendingCheckout": "You have items in your cart. Checkout to receive your order!"
+}

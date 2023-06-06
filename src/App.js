@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import AppRoutes from "./routes";
+import { BrowserRouter } from "react-router-dom";
+import AuthProvider from './contexts/AuthContext';
+import { PageSettingsProvider } from './contexts/PageContext';
+import useTheme from "./hooks/theme";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	useTheme("default");
+	return (
+		<BrowserRouter>
+			<AuthProvider>
+				<PageSettingsProvider>
+						<AppRoutes />
+				</PageSettingsProvider>
+			</AuthProvider>
+		</BrowserRouter>
+	);
 }
 
 export default App;
