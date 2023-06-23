@@ -2,5 +2,8 @@
     "headerTop": {
         "login": "Iniciar sessão"
       },
-    "signOut": "Sair"
+    "signOut": "Sair",
+    "admin": {
+      "supplierProdut": "Supplier Products"
+    }
 }

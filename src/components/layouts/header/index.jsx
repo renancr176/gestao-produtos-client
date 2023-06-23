@@ -88,6 +88,7 @@ export default function Header() {
 						{user && hasRoles([USER_ROLES.ADMIN]) ? (
 							<Nav>
 								<Nav.Link href="/admin">Home</Nav.Link>
+								<Nav.Link href="/admin/supplierProduct">{t("admin.supplierProdut")}</Nav.Link>
 							</Nav>
 						) : null}
 						<Nav className={styles.navTopHiddenLinks}>

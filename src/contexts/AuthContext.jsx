@@ -66,7 +66,7 @@ export default function AuthProvider({ children }) {
 
 	const getUserAreaPath = () => {
 		if (!user) return "/";
-		if (hasRoles([USER_ROLES.ADMIN])) return "/admin/";
+		if (hasRoles([USER_ROLES.ADMIN])) return "/admin";
 		return "/";
 	};
 	

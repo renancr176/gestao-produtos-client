@@ -2,5 +2,8 @@
     "headerTop": {
         "login": "Log In"
       },
-    "signOut": "Sing Out"
+    "signOut": "Sing Out",
+    "admin": {
+      "supplierProdut": "Fornecedor Produtos"
+    }
 }

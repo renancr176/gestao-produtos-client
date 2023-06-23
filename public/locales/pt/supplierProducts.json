@@ -1,0 +1,7 @@
+{
+    "title": "Fornecedor Produtos",
+    "form":{
+        "labelName": "Nome",
+        "labelActive": "Ativo"
+    }
+}

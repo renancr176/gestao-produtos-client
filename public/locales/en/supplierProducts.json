@@ -1,0 +1,7 @@
+{
+    "title": "Supplier Products",
+    "form":{
+        "labelName": "Name",
+        "labelActive": "Active"
+    }
+}

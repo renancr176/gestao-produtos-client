@@ -12,6 +12,7 @@ import SignIn from "./pages/public/auth/signIn";
 
 //#region Admin Pages
 import AdminHome from './pages/admin/index';
+import SupplierProducts from './pages/admin/supplierProduct';
 //#endregion
 
 const PageRoutes = [
@@ -62,7 +63,11 @@ const PageRoutes = [
 				},
 				element: <AdminHome />,
 				children: [
-                    
+                    {
+						path: "supplierProduct",
+						name: "supplierProduct.index",
+						element: <SupplierProducts />
+					}
                 ]
             }
             //#endregion
