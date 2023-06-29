@@ -13,6 +13,10 @@ import SignIn from "./pages/public/auth/signIn";
 //#region Admin Pages
 import AdminHome from './pages/admin/index';
 import SupplierProducts from './pages/admin/supplierProduct';
+import SupplierProductEdit from './pages/admin/supplierProduct/edit';
+import Products from './pages/admin/product';
+import ProductAdd from './pages/admin/product/add';
+import ProductEdit from './pages/admin/product/edit';
 //#endregion
 
 const PageRoutes = [
@@ -66,7 +70,31 @@ const PageRoutes = [
                     {
 						path: "supplierProduct",
 						name: "supplierProduct.index",
-						element: <SupplierProducts />
+						element: <SupplierProducts />,
+						children: [
+							{
+								path: ":id",
+								name: "supplierProduct.edit",
+								element: <SupplierProductEdit />
+							},
+						]
+					},
+					{
+						path: "product",
+						name: "product.index",
+						element: <Products />,
+						children: [
+							{
+								path: "add",
+								name: "product.add",
+								element: <ProductAdd/>
+							},
+							{
+								path: ":id",
+								name: "product.edit",
+								element: <ProductEdit />
+							},
+						]
 					}
                 ]
             }

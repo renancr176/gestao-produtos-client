@@ -4,6 +4,7 @@
       },
     "signOut": "Sair",
     "admin": {
-      "supplierProdut": "Supplier Products"
+      "supplierProduct": "Supplier Products",
+      "product": "Products"
     }
 }

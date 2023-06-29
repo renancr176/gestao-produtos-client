@@ -4,6 +4,7 @@
       },
     "signOut": "Sing Out",
     "admin": {
-      "supplierProdut": "Fornecedor Produtos"
+      "supplierProduct": "Fornecedor Produtos",
+      "product": "Produtos"
     }
 }

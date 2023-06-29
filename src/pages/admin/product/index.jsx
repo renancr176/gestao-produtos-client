@@ -5,12 +5,13 @@ import { Container, Table, Pagination, Row, Col, Button } from "react-bootstrap"
 import useAlert from "../../../hooks/alert";
 import {FaPencilAlt, FaTrashAlt} from 'react-icons/fa';
 import usePagination from '../../../hooks/pagination';
-import {searchSupplierProductsRequest} from '../../../services/supplierProduct';
+import {searchProductsRequest} from '../../../services/product';
 import Spinner from '../../../components/elements/spinner';
 import PaginationMenu from '../../../components/elements/paginationMenu';
+import {formatCurrency} from '../../../utils/helpers';
 
-export default function SupplierProducts() {
-	const { t } = useTranslation("supplierProducts");
+export default function Products() {
+	const { t } = useTranslation("products");
 	const navigate = useNavigate();
 	const {
 		data: products,
@@ -20,7 +21,7 @@ export default function SupplierProducts() {
 		prevPage,
 		setPage,
 		isLoading,
-	} = usePagination(searchSupplierProductsRequest);
+	} = usePagination(searchProductsRequest);
 
 	const goToEdit = (id) => {
 		navigate(`${id}`);
@@ -30,15 +31,19 @@ export default function SupplierProducts() {
 		<Container>
 			<h3>{t("title")}</h3>
 			<Row>
-				<Col></Col>
-			</Row>
+					<Col className="d-flex justify-content-end">
+						<Link to="add" className="btn btn-primary btn-tc-blue">
+							Adicionar
+						</Link>
+					</Col>
+				</Row>
 			<Row>
 				<Col>
 					<Table className="mt-5" striped bordered hover>
 						<thead>
 							<tr>
 								<th style={{width: "50%"}}>Name</th>
-								<th style={{width: "50%"}}>Tipo</th>
+								<th style={{width: "50%"}}>Preço</th>
 								<th style={{width: "20%"}}></th>
 							</tr>
 						</thead>
@@ -49,7 +54,7 @@ export default function SupplierProducts() {
 								products?.map((product) => (
 							<tr>
 								<td>{product.name}</td>
-								<td>{product.productType.name}</td>
+								<td>{formatCurrency(product.price)}</td>
 								<td className="text-center">
 									<Button 
 										variant="warning" 

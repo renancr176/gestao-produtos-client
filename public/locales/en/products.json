@@ -1,0 +1,47 @@
+{
+    "title": "Products",
+    "add": {
+        "title": "New Product",
+        "success": "Product #PRODUCT_NAME added successfully"
+    },
+    "edit": {
+        "title": "Edit Product",
+        "success": "Product updated successfully"
+    },
+    "form": {
+        "selectAnOption": "Select an option",
+        "yes": "Yes",
+        "no": "No",
+        "labelName": "Name",
+        "labelCategory": "Category",
+        "labelProductType": "Product Type",
+        "labelChargeType": "Charge Type",
+        "labelIsRecurring": "Recurring",
+        "labelIsProportional": "Proportional",
+        "labelPeriod": "Period",
+        "labelStatus": "Status",
+        "labelBillCicle": "Bill cicle",
+        "labelDays": "Days",
+        "labelNotify": "Notify",
+        "labelNotificationMessage": "Notification message",
+        "labelComplexityType": "Complexity Type",
+        "labelSaleType": "Sale Type",
+        "labelInvoiceType": "Invoice Type",
+        "labelCurrencyType": "Currency Type",
+        "labelPrice": "Price",
+        "labelPriceWithOutTraffic": "Price Without traffic",
+        "labelWholesalePrice": "Wholesale price",
+        "labelWholesaleUnit": "Wholesale Unit",
+        "labelQuotaLimit": "Quota Limit",
+        "labelQuotaUnit": "Quota Unit",
+        "labelExhaustedQuotaType": "Exhausted Quota Type",
+        "labelTelecomTax": "Telecom Tax",
+        "labelSvaTax": "Sva Tax",
+        "labelHidden": "Hidden",
+        "labelLegacyCode": "Legacy Code",
+        "labelHlr": "HLR",
+        "labelSupplierProduct": "Supplier Product Id",
+        "labelBtnCreate": "Create",
+        "labelBtnUpdate": "Update"
+    }
+}

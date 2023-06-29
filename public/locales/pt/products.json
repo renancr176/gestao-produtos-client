@@ -1,0 +1,47 @@
+{
+    "title": "Produtos",
+    "add": {
+        "title": "Cadastro de Produto",
+        "success": "Produto #PRODUCT_NAME adicionado com sucesso."
+    },
+    "edit": {
+        "title": "Alterar Produto",
+        "success": "Produto alterado com sucesso."
+    },
+    "form": {
+        "selectAnOption": "Selecione uma opção",
+        "yes": "Sim",
+        "no": "Não",
+        "labelName": "Nome",
+        "labelCategory": "Categoria",
+        "labelProductType": "Tipo de Produto",
+        "labelChargeType": "Tipo de Cobrança",
+        "labelIsRecurring": "Recorrente",
+        "labelIsProportional": "Pro-Rata",
+        "labelPeriod": "Periodo",
+        "labelStatus": "Status",
+        "labelBillCicle": "Bill cicle",
+        "labelDays": "Dias",
+        "labelNotify": "Notificar",
+        "labelNotificationMessage": "Mensagem de notificação",
+        "labelComplexityType": "Tipo de Complexidade",
+        "labelSaleType": "Tipo de Venda",
+        "labelInvoiceType": "Tipo de Fatura",
+        "labelCurrencyType": "Tipo de Moeda",
+        "labelPrice": "Preço",
+        "labelPriceWithOutTraffic": "Preço sem tráfego",
+        "labelWholesalePrice": "Preço por atacado",
+        "labelWholesaleUnit": "Unidade de Atacado",
+        "labelQuotaLimit": "Limite de Cota",
+        "labelQuotaUnit": "Unidade de Cota",
+        "labelExhaustedQuotaType": "Tipo de cota esgotada",
+        "labelTelecomTax": "Taxa Telecom",
+        "labelSvaTax": "Taxa SVA",
+        "labelHidden": "Oculto",
+        "labelLegacyCode": "Código do legado",
+        "labelHlr": "HLR",
+        "labelSupplierProduct": "Id Produto Fornecedor",
+        "labelBtnCreate": "Cadastrar",
+        "labelBtnUpdate": "Atualizar"
+    }
+}
