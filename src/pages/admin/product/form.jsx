@@ -81,8 +81,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllChargeTypesRequest()
             .then(({ data }) => setChargeTypes(data))
@@ -90,8 +89,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllComplexityTypesRequest()
             .then(({ data }) => setComplexityTypes(data))
@@ -99,8 +97,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllCurrencyTypesRequest()
             .then(({ data }) => setCurrencyTypes(data))
@@ -108,8 +105,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllExhaustedQuotaTypesRequest()
             .then(({ data }) => setExhaustedQuotaTypes(data))
@@ -117,8 +113,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllInvoiceTypesRequest()
             .then(({ data }) => setInvoiceTypes(data))
@@ -126,8 +121,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllPeriodsRequest()
             .then(({ data }) => setPeriods(data))
@@ -135,8 +129,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllProductStatusRequest()
             .then(({ data }) => setProductStatus(data))
@@ -144,8 +137,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllProductTypesRequest()
             .then(({ data }) => setProductTypes(data))
@@ -153,8 +145,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllQuotaUnitsRequest()
             .then(({ data }) => setQuotaUnits(data))
@@ -162,8 +153,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllSaleTypesRequest()
             .then(({ data }) => setSaleTypes(data))
@@ -171,8 +161,7 @@ export default function ProductForm({
                 console.error(error);
                 sweetAlert.fireRequestError(error);
                 navigate("/product");
-            })
-            .finally(() => setLoading(false));
+            });
 
         getAllWholesaleUnitsRequest()
             .then(({ data }) => setWholesaleUnits(data))
