@@ -1,5 +1,6 @@
 {
     "title": "Fornecedor Produtos",
+    "labelSearch": "Pesquisar",
     "form":{
         "labelName": "Nome",
         "labelActive": "Ativo"

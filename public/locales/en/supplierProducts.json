@@ -1,5 +1,6 @@
 {
     "title": "Supplier Products",
+    "labelSearch": "Search",
     "form":{
         "labelName": "Name",
         "labelActive": "Active"
