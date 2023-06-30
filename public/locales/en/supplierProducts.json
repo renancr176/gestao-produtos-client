@@ -1,6 +1,7 @@
 {
     "title": "Supplier Products",
     "labelSearch": "Search",
+    "labelClearSearch": "Clear",
     "form":{
         "selectAnOption": "Select an option",
         "yes": "Yes",

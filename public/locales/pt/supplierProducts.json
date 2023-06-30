@@ -1,6 +1,7 @@
 {
     "title": "Fornecedor Produtos",
     "labelSearch": "Pesquisar",
+    "labelClearSearch": "Limpar",
     "form":{
         "selectAnOption": "Selecione uma option",
         "yes": "Sim",

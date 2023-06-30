@@ -1,6 +1,7 @@
 {
     "title": "Products",
     "labelSearch": "Search",
+    "labelClearSearch": "Clear",
     "add": {
         "title": "New Product",
         "success": "Product #PRODUCT_NAME added successfully"
