@@ -13,14 +13,14 @@ export default function ProductEdit() {
 	const { fireRequestError, fireSuccess } = useAlert();
     const { t } = useTranslation("products");
 
-    const [product, setProduct] = useState();
+    const [form, setForm] = useState();
 
 	useEffect(() => {
 		if (!id) return navigate("../");
 
 		getProductRequest(id)
 			.then(({ data }) => {
-				setProduct(data);
+				setForm(data);
 			})
 			.catch((err) => {
 				console.error(err);
@@ -49,8 +49,8 @@ export default function ProductEdit() {
     return (
 		<Container className="mb-5">
 			<h3>{t("edit.title")}</h3>
-			{product ? (
-				<ProductForm onSubmit={handleSubmit} product={product} />
+			{form ? (
+				<ProductForm onSubmit={handleSubmit} form={form} />
 			) : (
 				<div style={{ width: "100%", textAlign: "center" }}>
 					<Spinner />

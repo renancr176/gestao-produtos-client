@@ -2,7 +2,14 @@
     "title": "Fornecedor Produtos",
     "labelSearch": "Pesquisar",
     "form":{
+        "selectAnOption": "Selecione uma option",
+        "yes": "Sim",
+        "no": "Não",
         "labelName": "Nome",
-        "labelActive": "Ativo"
+        "labelProductType": "Tipo do Produto",
+        "labelActive": "Ativo",
+        "labelBtnCreate": "Cadastrar",
+        "labelBtnUpdate": "Atualizar",
+        "labelBtnBack": "Cancelar/Voltar"
     }
 }

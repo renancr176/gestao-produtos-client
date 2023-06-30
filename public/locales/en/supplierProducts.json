@@ -2,7 +2,14 @@
     "title": "Supplier Products",
     "labelSearch": "Search",
     "form":{
+        "selectAnOption": "Select an option",
+        "yes": "Yes",
+        "no": "No",
         "labelName": "Name",
-        "labelActive": "Active"
+        "labelProductType": "Product Type",
+        "labelActive": "Active",
+        "labelBtnCreate": "Create",
+        "labelBtnUpdate": "Update",
+        "labelBtnBack": "Cancel"
     }
 }

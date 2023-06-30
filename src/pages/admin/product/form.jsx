@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import Spinner from '../../../components/elements/spinner';
 import InputCurrency from "../../../components/elements/inputCurrency";
+import { extractIds } from '../../../utils/helpers';
 import { getAllCategoriesRequest } from '../../../services/category';
 import { getAllChargeTypesRequest } from '../../../services/chargeType';
 import { getAllComplexityTypesRequest } from '../../../services/complexityType';
@@ -22,7 +23,7 @@ import { getAllWholesaleUnitsRequest } from '../../../services/wholesaleUnit';
 
 export default function ProductForm({
     onSubmit,
-    product = {
+    form = {
         name: "",
         categoryId: 0,
         productTypeId: 0,
@@ -181,14 +182,6 @@ export default function ProductForm({
         onSubmit(data).finally(() => setSubmitting(false));
     };
 
-    const extractIds = (list) => {
-        let ids = [];
-        list.map(({id}) => {
-            ids.push(id.toString());
-        });
-        return ids;
-    };
-
     const schema = yup.object().shape({
         name: yup.string().required(),
         categoryId: yup.string().oneOf(extractIds(categories)),
@@ -220,7 +213,7 @@ export default function ProductForm({
         supplierProductId: yup.string().test(
             'supplierProductId', 
             `${t("form.labelSupplierProduct")} is required!`, 
-            (value) => product?.id !== undefined || (value?.length !== undefined && value?.length === 36))
+            (value) => form?.id !== undefined || (value?.length !== undefined && value?.length === 36))
     });
 
     return loading ? (
@@ -232,7 +225,7 @@ export default function ProductForm({
             enableReinitialize={true}
             validationSchema={schema}
             onSubmit={handleSubmit}
-            initialValues={product}
+            initialValues={form}
         >
             {({ handleSubmit, handleChange, values, touched, errors }) => (
                 <Form noValidate onSubmit={handleSubmit}>
@@ -768,7 +761,7 @@ export default function ProductForm({
                             />
                         </Col>
                     </Form.Group>
-                    {product?.id === undefined ? (
+                    {form?.id === undefined ? (
                     <Form.Group as={Row} className="mb-2">
                         <Form.Label column md={3} className="d-flex justify-content-end">
                             {t("form.labelSupplierProduct")}:{" "}
@@ -788,7 +781,7 @@ export default function ProductForm({
                     ) : null}
                     <Row className="mt-5">
                         <Col className="d-flex justify-content-center">
-                            {product?.id === undefined ? (
+                            {form?.id === undefined ? (
                                 <Button type="submit" variant="primary">
                                     {t("form.labelBtnCreate")} {submitting && <Spinner />}
                                 </Button>

@@ -77,3 +77,11 @@ export const scrollWithOffset = (el, yOffset=-80) => {
 export const removeDiacritics = (text) => {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 }
+
+export const extractIds = (list) => {
+    let ids = [];
+    list.map(({id}) => {
+        ids.push(id.toString());
+    });
+    return ids;
+};
