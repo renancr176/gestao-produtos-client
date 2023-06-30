@@ -1,7 +1,6 @@
 {
     "title": "Products",
     "labelSearch": "Search",
-    "labelBtnSearch": "Filtrar",
     "add": {
         "title": "New Product",
         "success": "Product #PRODUCT_NAME added successfully"

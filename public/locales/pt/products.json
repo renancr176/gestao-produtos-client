@@ -1,7 +1,6 @@
 {
     "title": "Produtos",
     "labelSearch": "Pesquisar",
-    "labelBtnSearch": "Filtrar",
     "add": {
         "title": "Cadastro de Produto",
         "success": "Produto #PRODUCT_NAME adicionado com sucesso."

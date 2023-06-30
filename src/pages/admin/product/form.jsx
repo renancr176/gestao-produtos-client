@@ -220,7 +220,7 @@ export default function ProductForm({
         supplierProductId: yup.string().test(
             'supplierProductId', 
             `${t("form.labelSupplierProduct")} is required!`, 
-            (value) => product?.id !== undefined || value.length === 36)
+            (value) => product?.id !== undefined || (value?.length !== undefined && value?.length === 36))
     });
 
     return loading ? (

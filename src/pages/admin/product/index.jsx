@@ -44,8 +44,6 @@ export default function Products() {
 		setFilter({name: searchText});
 	};
 
-	useEffect(() => {}, [searchText])
-
 	return (
 		<Container>
 			<h3>{t("title")}</h3>
