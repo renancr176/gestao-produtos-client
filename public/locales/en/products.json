@@ -42,6 +42,7 @@
         "labelHlr": "HLR",
         "labelSupplierProduct": "Supplier Product Id",
         "labelBtnCreate": "Create",
-        "labelBtnUpdate": "Update"
+        "labelBtnUpdate": "Update",
+        "labelBtnBack": "Cancel"
     }
 }

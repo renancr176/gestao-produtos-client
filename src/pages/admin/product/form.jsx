@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useAlert from '../../../hooks/alert';
 import { Formik } from "formik";
@@ -797,6 +797,9 @@ export default function ProductForm({
                                     {t("form.labelBtnUpdate")} {submitting && <Spinner />}
                                 </Button>
                             )}
+                            <Link to="../" className="ms-5 btn btn-secondary">
+                                {t("form.labelBtnBack")}
+                            </Link>
                         </Col>
                     </Row>
                 </Form>

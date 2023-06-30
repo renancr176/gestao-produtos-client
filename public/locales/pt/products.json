@@ -42,6 +42,7 @@
         "labelHlr": "HLR",
         "labelSupplierProduct": "Id Produto Fornecedor",
         "labelBtnCreate": "Cadastrar",
-        "labelBtnUpdate": "Atualizar"
+        "labelBtnUpdate": "Atualizar",
+        "labelBtnBack": "Cancelar/Voltar"
     }
 }
