@@ -176,39 +176,51 @@ export default function ProductForm({
     const handleSubmit = (values) => {
         setSubmitting(true);
         let data = { ...values };
-        data.supplierProducts = [values.supplierProductId];
+        if (values?.supplierProductId)
+            data.supplierProducts = [values.supplierProductId];
         onSubmit(data).finally(() => setSubmitting(false));
+    };
+
+    const extractIds = (list) => {
+        let ids = [];
+        list.map(({id}) => {
+            ids.push(id.toString());
+        });
+        return ids;
     };
 
     const schema = yup.object().shape({
         name: yup.string().required(),
-        categoryId: yup.string().oneOf(categories),
-        productTypeId: yup.string().oneOf(productTypes),
-        chargeTypeId: yup.string().oneOf(chargeTypes),
+        categoryId: yup.string().oneOf(extractIds(categories)),
+        productTypeId: yup.string().oneOf(extractIds(productTypes)),
+        chargeTypeId: yup.string().oneOf(extractIds(chargeTypes)),
         isRecurring: yup.bool().required(),
         isProportional: yup.bool().required(),
-        periodId: yup.string().oneOf(periods),
-        statusId: yup.string().oneOf(productStatus),
+        periodId: yup.string().oneOf(extractIds(periods)),
+        statusId: yup.string().oneOf(extractIds(productStatus)),
         notify: yup.bool().required(),
         // notificationMessage: yup.string().when("notify", {
         //     is: true,
         //     then: yup.string().required("Must enter notification message")
         // }),
-        complexityTypeId: yup.string().oneOf(complexityTypes),
-        saleTypeId: yup.string().oneOf(saleTypes),
-        invoiceTypeId: yup.string().oneOf(invoiceTypes),
-        currencyTypeId: yup.string().oneOf(currencyTypes),
+        complexityTypeId: yup.string().oneOf(extractIds(complexityTypes)),
+        saleTypeId: yup.string().oneOf(extractIds(saleTypes)),
+        invoiceTypeId: yup.string().oneOf(extractIds(invoiceTypes)),
+        currencyTypeId: yup.string().oneOf(extractIds(currencyTypes)),
         price: yup.number().min(0.00),
         priceWithOutTraffic: yup.number().min(0.00),
         wholesalePrice: yup.number().min(0.00),
-        wholesaleUnitId: yup.string().oneOf(wholesaleUnits),
+        wholesaleUnitId: yup.string().oneOf(extractIds(wholesaleUnits)),
         quotaLimit: yup.number().min(0),
-        quotaUnitId: yup.string().oneOf(quotaUnits),
-        exhaustedQuotaTypeId: yup.string().oneOf(exhaustedQuotaTypes),
+        quotaUnitId: yup.string().oneOf(extractIds(quotaUnits)),
+        exhaustedQuotaTypeId: yup.string().oneOf(extractIds(exhaustedQuotaTypes)),
         telecomTax: yup.number().min(0.00),
         svaTax: yup.number().min(0.00),
         hidden: yup.bool().required(),
-        supplierProductId: yup.string().required().uuid()
+        supplierProductId: yup.string().test(
+            'supplierProductId', 
+            `${t("form.labelSupplierProduct")} is required!`, 
+            (value) => product?.id !== undefined || value.length === 36)
     });
 
     return loading ? (
@@ -756,6 +768,7 @@ export default function ProductForm({
                             />
                         </Col>
                     </Form.Group>
+                    {product?.id === undefined ? (
                     <Form.Group as={Row} className="mb-2">
                         <Form.Label column md={3} className="d-flex justify-content-end">
                             {t("form.labelSupplierProduct")}:{" "}
@@ -772,6 +785,7 @@ export default function ProductForm({
                             />
                         </Col>
                     </Form.Group>
+                    ) : null}
                     <Row className="mt-5">
                         <Col className="d-flex justify-content-center">
                             {product?.id === undefined ? (

@@ -1,12 +1,61 @@
-import React from 'react';
-import { useParams } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import useAlert from "../../../hooks/alert";
+import { useTranslation } from "react-i18next";
+import Spinner from "../../../components/elements/spinner";
+import {getProductRequest, editProductRequest} from '../../../services/product';
+import ProductForm from './form';
 
 export default function ProductEdit() {
     const { id } = useParams();
+	const navigate = useNavigate();
+	const { fireRequestError, fireSuccess } = useAlert();
+    const { t } = useTranslation("products");
+
+    const [product, setProduct] = useState();
+
+	useEffect(() => {
+		if (!id) return navigate("../");
+
+		getProductRequest(id)
+			.then(({ data }) => {
+				setProduct(data);
+			})
+			.catch((err) => {
+				console.error(err);
+				fireRequestError(err);
+				navigate("../");
+			});
+	}, [id]);
+
+    const handleSubmit = (values) => {
+        debugger;
+		return editProductRequest({
+			...values,
+			id,
+		})
+        .then(({ data }) => {
+            const message = t("edit.success").replace("#PRODUCT_NAME", data.name);
+            fireSuccess(message);
+            navigate("../");
+        })
+        .catch((err) => {
+            console.error(err);
+            fireRequestError(err);
+        });
+	};
 
     return (
-        <div>
-            {id}
-        </div>
-    );
+		<Container className="mb-5">
+			<h3>{t("edit.title")}</h3>
+			{product ? (
+				<ProductForm onSubmit={handleSubmit} product={product} />
+			) : (
+				<div style={{ width: "100%", textAlign: "center" }}>
+					<Spinner />
+				</div>
+			)}
+		</Container>
+	);
 };
