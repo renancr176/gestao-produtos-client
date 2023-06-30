@@ -16,7 +16,7 @@ export default function ProductAdd() {
 			.then(({ data }) => {
 				const message = t("add.success").replace("#PRODUCT_NAME", data.name);
 				fireSuccess(message);
-				navigate("../");
+				navigate(`../${data.id}`);
 			})
 			.catch((err) => {
 				console.error(err);
