@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Container, Table, Pagination, Row, Col, Button } from "react-bootstrap";
+import { Container, Table, Form, Row, Col, Button } from "react-bootstrap";
 import useAlert from "../../../hooks/alert";
 import {FaPencilAlt, FaTrashAlt} from 'react-icons/fa';
 import usePagination from '../../../hooks/pagination';
@@ -9,10 +9,13 @@ import {searchProductsRequest} from '../../../services/product';
 import Spinner from '../../../components/elements/spinner';
 import PaginationMenu from '../../../components/elements/paginationMenu';
 import {formatCurrency} from '../../../utils/helpers';
+import Swal from "sweetalert2";
 
 export default function Products() {
 	const { t } = useTranslation("products");
 	const navigate = useNavigate();
+	const { fireRequestError } = useAlert();
+	const [searchText, setSearchText] = useState("");
 	const {
 		data: products,
 		pageIndex,
@@ -21,11 +24,27 @@ export default function Products() {
 		prevPage,
 		setPage,
 		isLoading,
-	} = usePagination(searchProductsRequest);
+		setFilter
+	} = usePagination(searchProductsRequest, {name: searchText});
 
 	const goToEdit = (id) => {
 		navigate(`${id}`);
 	};
+
+	const search = () => {
+		if(searchText === undefined || searchText.length === 0)
+		{
+			Swal.fire({
+				icon: "error",
+				text: "Informe o nome do produto para pesquisar"
+			});
+			return;
+		}
+
+		setFilter({name: searchText});
+	};
+
+	useEffect(() => {}, [searchText])
 
 	return (
 		<Container>
@@ -41,6 +60,28 @@ export default function Products() {
 				<Col>
 					<Table className="mt-5" striped bordered hover>
 						<thead>
+							<tr>
+								<th colSpan={3}>
+									<Row>
+										<Col md={10}>
+											<Form.Group as={Row} className="mb-2">
+												<Col>
+													<Form.Control
+														type="text"
+														value={searchText}
+														onChange={(e) => setSearchText(e.target.value)}
+													/>
+												</Col>
+											</Form.Group>
+										</Col>
+										<Col md={2}>
+											<Button onClick={() => search()}>
+												{t("labelSearch")}
+											</Button>
+										</Col>
+									</Row>
+								</th>
+							</tr>
 							<tr>
 								<th style={{width: "50%"}}>Name</th>
 								<th style={{width: "50%"}}>Preço</th>
